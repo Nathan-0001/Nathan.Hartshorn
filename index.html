@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathan Hartshorn</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js"></script>
+    
+</head>
+<body>
+    <script src="finisher-header.es5.min.js" type="text/javascript"></script>
+    <div class="finisher-header" id="background">
+    <script type="text/javascript">
+new FinisherHeader({
+    "count": 100,
+    "size": {
+    "min": 2,
+    "max": 8,
+    "pulse": 0
+    },
+    "speed": {
+    "x": {
+        "min": 0,
+        "max": 0.4
+    },
+    "y": {
+        "min": 0,
+        "max": 0.6
+    }
+    },
+    "colors": {
+    "background": "#928faa",
+    "particles": [
+        "#d0d335",
+        "#3ff4d0",
+        "#e3462f"
+    ]
+    },
+    "blending": "overlay",
+    "opacity": {
+    "center": 1,
+    "edge": 0
+    },
+    "skew": 0,
+    "shapes": [
+    "c"
+    ]
+});
+</script>
+        <nav>
+            <ul id="stick" >
+                <li><p id="NH">NH</p></li>
+                <li><a class="hideOnMobile" href="#Home">Home</a></li>
+                <li class="hideOnMobile" ><a href="#About">About me</a></li>
+                <li class="hideOnMobile"><a href="#Resume">Resume</a></li>
+                <li class="hideOnMobile"><a href="#Contact">Contact me</a></li>
+                <li class="menu-button" onclick=showSidebar()><a title="menu" href="#" title="Open menu"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+            <ul class="sidebar">
+                <li onclick=hideSidebar()><a title="close" href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li class="where">Where to?</li>
+                <li><a href="#Home" onclick=hideSidebar()>Home</a></li>
+                <li><a href="#Resume" onclick=hideSidebar()>Resume</a></li>
+                <li><a href="#Contact" onclick=hideSidebar()>Contact</a></li>
+            </ul>    
+        </nav>
+        <header id="Home">
+            <h1>Nathan Hartshorn</h1>
+            <h2>Front-End Developer</h2>
+        </header>
+    </div>
+    <main>
+        <div>
+            <h1 id="About">About me</h1>
+        </div>
+        <div>
+            <h1 id="Resume">Resume</h1>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <h1 id="Contact">Connect with Me</h1>
+            <a href="https://github.com/Nathan-0001" target="_blank"><img class="socials" src="github.png" alt="GitHub"><a href="https://www.linkedin.com/in/nathan-hartshorn/" target="_blank"><img class="socials" src="linkedin.png" alt="LinkedIn"><a href="mailto:nathan.hartshorn24@gmail.com" target="_blank"><img class="socials" src="email.png" alt="email"></a>
+        </div>
+    </footer>
+</body>
+</html>
