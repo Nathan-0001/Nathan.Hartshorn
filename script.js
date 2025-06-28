@@ -6,16 +6,13 @@ function hideSidebar(){
     const sidebar = document.querySelector('.sidebar')
     sidebar.style.display = 'none';          
     }
-function stickyNav() {
-    var headerHeight = document.querySelector("#stick").offsetHeight * 0.001;
-    var navbar = document.querySelector("nav");
-    var scrollValue = window.scrollY;
-
-    if(scrollValue > headerHeight){
-        navbar.classList.add("header-sticky")
+var prevScrollPos = window.pageYOffset;
+window.onscroll = function(){
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollPos > currentScrollPos){
+        document.getElementById("navbar").style.top = "0";
     } else {
-        navbar.classList.remove("header-sticky")
+        document.getElementById("navbar").style.top = "-11vh";
     }
+    prevScrollPos = currentScrollPos;
 }
-window.addEventListener("scroll", stickyNav);
-
