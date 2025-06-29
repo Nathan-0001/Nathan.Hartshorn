@@ -123,12 +123,19 @@ header{
     padding-top: 225px;
 }
 
-#About, #Resume{
+#About {
     text-align: center;
     height: 400px;   
     padding-top: 60px;
     color: white;
-    background: gray;
+    background: lightsteelblue;
+}
+#Resume {
+    text-align: center;
+    height: 400px;   
+    padding-top: 60px;
+    color: white;
+    background: black;
 }
 .languages {
     margin-top: 20px;
