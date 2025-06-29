@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nathan Hartshorn</title>
     <link href="styles.css" rel="stylesheet">
-    <script src="script.js"></script>
+    
     
 </head>
 <body>
@@ -48,14 +48,14 @@ new FinisherHeader({
     ]
 });
 </script>
-        <nav id="navbar">
-            <ul id="stick" >
+        <nav id="navbar" class="navbar">
+            <ul id="stick">
                 <li><p id="NH">NH</p></li>
                 <li><a class="hideOnMobile" href="#Home">Home</a></li>
-                <li class="hideOnMobile" ><a href="#About">About me</a></li>
-                <li class="hideOnMobile"><a href="#Resume">Resume</a></li>
-                <li class="hideOnMobile"><a href="#Contact">Contact me</a></li>
-                <li class="menu-button" onclick=showSidebar()><a title="menu" href="#" title="Open menu"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                <li  class="hideOnMobile" ><a onclick=hideNavbar() href="#About">About me</a></li>
+                <li  class="hideOnMobile"><a href="#Resume" onclick=hideNavbar()>Resume</a></li>
+                <li  class="hideOnMobile"><a href="#Contact" onclick=hideNavbar()>Contact me</a></li>
+                <li onclick=showSidebar() class="menu-button" ><a  title="menu" href="#" title="Open menu"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
             </ul>
             <ul class="sidebar">
                 <li onclick=hideSidebar()><a title="close" href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
@@ -72,7 +72,51 @@ new FinisherHeader({
     </div>
     <main>
         <div id="About">
-            <h1 >About me</h1>
+            <h1 >About</h1>
+            <div id="bars-animate" class="languages">
+                <div id="html" class="lang">
+                    <img src="html5.png" alt="HTML 5" class="langIMG">
+                    <div class="myProgress">
+                        <div id="bar1">0%</div>
+                    </div>
+                </div>
+                <div id="css" class="lang">
+                    <img src="css3.png" alt="CSS 3" class="langIMG">
+                    <div class="myProgress">
+                        <div id="bar2">0%</div>
+                    </div>
+                </div>
+                <div id="js" class="lang">
+                    <img src="js.png" alt="JavaScript" class="langIMG">
+                    <div class="myProgress">
+                        <div id="bar3">0%</div>
+                    </div>
+                </div>
+                <div id="typescript" class="lang">
+                    <img src="typescript.png" alt="TypeScript" class="langIMG">
+                    <div class="myProgress">
+                        <div id="bar4">0%</div>
+                    </div>
+                </div>
+                <div id="react" class="lang">
+                    <img src="react.png" alt="React" class="langIMG">
+                    <div class="myProgress">
+                        <div id="bar5">0%</div>
+                    </div>
+                </div>
+                <div id="git" class="lang">
+                    <img src="git.png" alt="Git" class="langIMG">
+                    <div class="myProgress">
+                        <div id="bar6">0%</div>
+                    </div>
+                </div>
+                <div id="next" class="lang">
+                    <img src="next.png" alt="Next.js" class="langIMG">
+                    <div class="myProgress">
+                        <div id="bar7">0%</div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="Resume">
             <h1 >Resume</h1>
@@ -84,5 +128,6 @@ new FinisherHeader({
             <a href="https://github.com/Nathan-0001" target="_blank" rel="noopener"><img class="socials" src="github.png" alt="GitHub"><a href="https://www.linkedin.com/in/nathan-hartshorn/" target="_blank" rel="noopener"><img class="socials" src="linkedin.png" alt="LinkedIn"><a href="mailto:nathan.hartshorn24@gmail.com" target="_blank" rel="noopener"><img class="socials" src="email.png" alt="email"></a>
         </div>
     </footer>
+    <script src="script.js"></script
 </body>
 </html>
