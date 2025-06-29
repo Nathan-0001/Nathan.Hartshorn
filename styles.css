@@ -15,7 +15,7 @@ nav {
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid white;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     transition: top 0.5s
 }
 nav.hideNavbar {
@@ -25,7 +25,7 @@ nav.onscroll{
     display: flex;
 }
 nav ul{
-    width: 100%;
+    width: 100vw;
     list-style: none;
     display: flex;
     justify-content: flex-end;
@@ -35,10 +35,10 @@ nav ul{
 
 nav li{
     height:10vh;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 nav li:first-child {
     margin-right: auto;
-    
 }
 #NH{
     font-family: 'Londrina Shadow', cursive;
@@ -60,10 +60,13 @@ nav a {
 nav a:hover {
     background: lightgray;
 }
-
-
+nav .sidebar li a:hover{
+    transform: scale(1.01);
+}
 .where{
     max-width: 100%;
+    color: white;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,13 +108,22 @@ nav a:hover {
         width : 100%;
     }
 }   
-
+@media (min-width: 786px){
+    body {
+        max-width: 800px;
+    }
+}
+@media (min-width: 1024px){
+    body{
+        max-width: 1000px;
+    }
+}
 /* Nav Finished*/
 
 /*Rest of page starts*/
 
 #background {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 }
 
@@ -124,6 +136,7 @@ header{
 }
 
 #About {
+    width: 100vw;
     text-align: center;
     height: 400px;   
     padding-top: 60px;
@@ -131,6 +144,7 @@ header{
     background: lightsteelblue;
 }
 #Resume {
+    width: 100vw;
     text-align: center;
     height: 400px;   
     padding-top: 60px;
@@ -142,7 +156,7 @@ header{
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: 100vw;
     height: 200px;
     display: flex;
     justify-content: space-evenly;
