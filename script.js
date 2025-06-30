@@ -24,13 +24,13 @@ window.onscroll = function(){
 var i = 0;
 var barsInterval = null;
 
-const barTargets = [100, 80, 25, 1, 1, 1, 1];
+const barTargets = [100, 80, 25, 1, 1, 20, 1, 1];
 
 function fillBars() {
     if (i === 0) {
         i = 1;
         var bars = [];
-        for (let n = 1; n <= 7; n++) {
+        for (let n = 1; n <= 8; n++) {
             bars.push(document.getElementById("bar" + n));
         }
         var width = 1;

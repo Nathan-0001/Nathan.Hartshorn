@@ -6,11 +6,51 @@
     margin: 0;
     box-sizing: border-box;
 }
-html, body {
-    overflow-x: hidden;
+html {
+    font-size: clamp(12px, 2vw, 18px);
+}
+@media (max-width: 900px){
+    html{
+        font-size: 15px;
+    }
+    .languages{
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+    .lang{
+        min-width: 100px;
+        max-width: 180px;
+    }
+}
+@media(max-width: 600px){
+    html{
+    font-size: 14px;
+    }
+    header{
+        padding-top: 120px;
+        font-size: 1.5rem;
+    }
+}
+/* Tablet landscape */
+@media (max-width: 1024px) {
+    .languages { max-width: 98vw; }
+    .lang { min-width: 90px; max-width: 160px; }
+}
+
+/* Small tablets/large phones */
+@media (max-width: 768px) {
+    header { font-size: 1.2rem; }
+    .lang { min-width: 80px; max-width: 140px; }
+}
+
+/* Extra small devices */
+@media (max-width: 350px) {
+    .sidebar { font-size: 0.8rem; }
+    .lang { min-width: 60px; }
 }
 body {
     font-family: 'Roboto Mono';
+    
 }
 /* Nav start */
 
@@ -34,18 +74,23 @@ nav ul{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    
+    font-size: 1.5vh
 }
 nav li{
-    height:10vh;
+    height:7vh;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 nav li:first-child {
     margin-right: auto;
 }
+nav a, .sidebar a {
+    padding: 1em 2em;
+    font-size: 1.1em;
+}
+.menu-button svg { width: 32px; height: 32px; }
 #NH{
     font-family: 'Londrina Shadow', cursive;
-    font-size: 55px; 
+    font-size: 6vh; 
     color: white;
     text-decoration: none;
     text-align: center;
@@ -76,10 +121,13 @@ nav .sidebar li a:hover{
 }
 .sidebar {
     position: fixed;
+    left: auto;
     top: 0;
     right: 0;
     height: 100vh;
-    width: 200px;
+    width: 60vw;
+    min-width: 180px;
+    max-width: 320px;
     z-index: 999;
     background: lightgray;
     box-shadow: rgba(0, 0, 0, 0.2);
@@ -90,6 +138,7 @@ nav .sidebar li a:hover{
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.2s;
+    overflow-x: hidden;
 }
 .sidebar[style*="display: flex"] {
     pointer-events: auto;
@@ -105,6 +154,7 @@ nav .sidebar li a:hover{
 .menu-button{
     display : none;
 }
+
 @media(max-width: 645px){
     .hideOnMobile {
         display : none;
@@ -112,49 +162,20 @@ nav .sidebar li a:hover{
     .menu-button{
         display : block;
     }
-}
-@media(max-width: 400px){
-    .sidebar{
-        max-width: 100vw;
-        width: 100vw;
-    }
-}  
-@media (min-width: 786px){
-    body {
-        max-width: 800px;
-    }
-}
-@media (min-width: 1024px){
-    body{
-        max-width: 1000px;
-    }
-}
-/* Stack bars vertically on small screens */
-@media (max-width: 700px) {
-    .languages {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 900px;
-    margin: 20px auto;
-    gap: 2rem;
-    padding: 1rem;
-    box-sizing: border-box;
-}
-    .lang {
-        width: 90%;
-        max-width: 350px;
-        height: auto;
-    }
-    .myProgress {
-        max-width: 250px;
+    .socials {
+        width: 40px;
+        margin: 12px 4px 0 4px;
     }
 }
 
-/* Adjust font size for very small screens */
-@media (max-width: 400px) {
+/* Nav Finished*/
+
+@media(max-width: 400px){
+    .sidebar{
+        max-width: 100vw;
+        min-width: 0;
+        width: 100vw;
+    }
     #bar1, #bar2, #bar3, #bar4, #bar5, #bar6, #bar7 {
         font-size: 0.7rem;
     }
@@ -165,31 +186,38 @@ nav .sidebar li a:hover{
     .myProgress{
         max-width: 95%;
     }
-}
-/* Nav Finished*/
-
+}  
 /*Rest of page starts*/
 
-#background {
+html, body {
+    height: 100%;
     width: 100%;
+    background: none;
+}
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100vh;
+    z-index: -1; /* ensures it stays behind your content */
 }
 
 header{
     color : rgba(255, 255, 255, 0.8);
-    font-size: 30px;
+    font-size: 3vh;
     display: block;
     text-align: center;
-    padding-top: 225px;
+    padding-top: 20vh;
+    height: 100vh;
 }
-
 #About {
     width: 100%;
     text-align: center;
     height: 50%;   
     padding-top: 60px;
     color: white;
-    background: lightsteelblue;
+    
 }
 #Resume {
     width: 100%;
@@ -197,24 +225,27 @@ header{
     height: 400px;   
     padding-top: 60px;
     color: white;
-    background: black;
+    background: rgba(0, 0, 0, 0.1);
 }
 /* Responsive bar container */
 .languages {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
     width: 100%;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
     gap: 2rem;
     padding: 1rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.languages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
 }
 .lang {
-    flex: 1 1 120px;
-    min-width: 90px;
-    max-width: 180px;
+    flex: 1 1 160px;
+    min-width: 120px;
+    max-width: 220px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -223,6 +254,10 @@ header{
     margin-bottom: 1rem;
 }
 /* Responsive images */
+img, .langIMG{ 
+    max-width: 100%;
+    height: auto;
+}
 .langIMG {
     width: 50%;
     min-width: 40px;
@@ -230,6 +265,7 @@ header{
     height: auto;
     margin-bottom: 0.5rem;
 }
+
 /* Responsive progress bar */
 .myProgress {
     width: 100%;
@@ -243,7 +279,7 @@ header{
 }
 
 /* Responsive bar text */
-#bar1, #bar2, #bar3, #bar4, #bar5, #bar6, #bar7 {
+#bar1, #bar2, #bar3, #bar4, #bar5, #bar6, #bar7, #bar8 {
     font-size: 0.9rem;
     padding-right: 4px;
     border-radius: 5px;
@@ -264,10 +300,13 @@ header{
     background: #61dafb;
     color: #222;
 }
-#bar6 {
-    background: #f34f29;
+#bar6{
+    background: #000;
 }
 #bar7 {
+    background: #f34f29;
+}
+#bar8 {
     background: #000;
 }
 /*Footer Styles and everything inside*/
@@ -285,12 +324,6 @@ footer {
 .socials {
     width: 65px;
     margin: 20px 20px 0 20px;
-}
-@media (max-width: 600px) {
-    .socials {
-        width: 70px;
-        margin: 16px 8px 0 8px;
-    }
 }
 .name {
     font-family:x;
