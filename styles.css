@@ -208,7 +208,7 @@ header{
     font-size: 3vh;
     display: block;
     text-align: center;
-    padding-top: 20vh;
+    padding-top: 35vh;
     height: 100vh;
 }
 #About {
@@ -217,7 +217,7 @@ header{
     height: 50%;   
     padding-top: 60px;
     color: white;
-    
+    background: rgba(0, 0, 0, 0.1);
 }
 #Resume {
     width: 100%;
