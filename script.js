@@ -6,6 +6,8 @@ function hideSidebar(){
     const sidebar = document.querySelector('.sidebar')
     sidebar.style.display = 'none';          
     }
+
+    
 var prevScrollPos = window.pageYOffset;
 window.onscroll = function(){
     var currentScrollPos = window.pageYOffset;
