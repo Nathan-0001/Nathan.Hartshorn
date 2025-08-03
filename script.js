@@ -1,3 +1,4 @@
+//Navbar/Sidebar Start
 function showSidebar(){
     const sidebar = document.querySelector('.sidebar')
     sidebar.style.display = 'flex';
@@ -6,8 +7,6 @@ function hideSidebar(){
     const sidebar = document.querySelector('.sidebar')
     sidebar.style.display = 'none';          
     }
-
-    
 var prevScrollPos = window.pageYOffset;
 window.onscroll = function(){
     var currentScrollPos = window.pageYOffset;
@@ -23,11 +22,11 @@ window.onscroll = function(){
     }
     prevScrollPos = currentScrollPos;
 }
+//Navbar/Sidebar Finish
+//Bars Percentages Start
 var i = 0;
 var barsInterval = null;
-
-const barTargets = [100, 80, 25, 1, 1, 20, 1, 1];
-
+const barTargets = [100, 100, 25, 1, 1, 15, 1, 1];
 function fillBars() {
     if (i === 0) {
         i = 1;
@@ -56,7 +55,8 @@ function fillBars() {
         frame();
     }
 }
-
+//Bars Percentages Finish
+//Reset Bars Start
 function resetBars() {
     if (barsInterval) clearInterval(barsInterval);
     for (let n = 1; n <= 7; n++) {
@@ -68,7 +68,8 @@ function resetBars() {
     }
     i = 0;
 }
-
+//Reset Bars Finish
+//Bar Animation Start
 const barsContainer = document.querySelector('#bars-animate');
 const observer = new IntersectionObserver(
     (entries) => {
@@ -86,3 +87,4 @@ const observer = new IntersectionObserver(
 if (barsContainer) {
     observer.observe(barsContainer);
 }
+//Bar Animation Finish

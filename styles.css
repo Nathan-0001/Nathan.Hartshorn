@@ -10,6 +10,8 @@
     --github: #000;
     --git: #f34f29;
     --node: #000;
+    --background1: rgba(0, 0, 0, 0.5); 
+    --background2: rgba(0, 0, 0, 0); 
 }
 * {
     padding: 0;
@@ -42,7 +44,7 @@ html {
         max-width: 95%;
     }
     .menu-button{
-        display : block;
+        display : block !important;
     }
 }  
 /*Medium Devices*/
@@ -77,6 +79,7 @@ html {
         gap: 1rem;
         padding: 0.5rem;
         max-width: 75%;
+        
         border: 1px solid red;
     }
     .lang{
@@ -231,15 +234,15 @@ header{
     height: 50%;   
     padding-top: 60px;
     color: white;
-    background: rgba(0, 0, 0, 0.1);
+    background: linear-gradient(360deg, var(--background1) 75%, var(--background2));
 }
-#Resume {
+#Projects {
     width: 100%;
     text-align: center;
     height: 400px;   
     padding-top: 60px;
     color: white;
-    background: rgba(0, 0, 0, 0.1);
+    background: linear-gradient(180deg, var(--background1) 10%, var(--background2));
 }
 /* Responsive bar container */
 .languages {
@@ -342,9 +345,6 @@ footer {
 }
 .name {
     font-family:x;
-}
-.lorem {
-    margin: 7rem;
 }
 .about-me{
     font-size: 1.2rem;
