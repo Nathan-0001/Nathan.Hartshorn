@@ -79,8 +79,9 @@ html {
         gap: 1rem;
         padding: 0.5rem;
         max-width: 75%;
-        
-        border: 1px solid red;
+        grid-row: 8;
+        grid-column: 1;
+        place-items: center;
     }
     .lang{
         min-width: 100px;
@@ -122,10 +123,11 @@ nav ul{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    font-size: 1.5vh
+    font-size: 2.2vh;
+    font-weight: bold;
 }
 nav li{
-    height:7vh;
+    height:10vh;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 nav li:first-child {
@@ -135,10 +137,10 @@ nav a, .sidebar a {
     padding: 1em 2em;
     font-size: 1.1em;
 }
-.menu-button svg { width: 32px; height: 32px; }
+.menu-button svg { width: 36px; height: 36px; }
 #NH{
     font-family: 'Londrina Shadow', cursive;
-    font-size: 6vh; 
+    font-size: 8vh; 
     color: white;
     text-decoration: none;
     text-align: center;
@@ -228,6 +230,7 @@ header{
     padding-top: 35vh;
     height: 100vh;
 }
+/* About Section*/
 #About {
     width: 100%;
     text-align: center;
@@ -235,15 +238,9 @@ header{
     padding-top: 60px;
     color: white;
     background: linear-gradient(360deg, var(--background1) 75%, var(--background2));
+    border: none;
 }
-#Projects {
-    width: 100%;
-    text-align: center;
-    height: 400px;   
-    padding-top: 60px;
-    color: white;
-    background: linear-gradient(180deg, var(--background1) 10%, var(--background2));
-}
+
 /* Responsive bar container */
 .languages {
     width: 100%;
@@ -327,6 +324,25 @@ img, .langIMG{
     background: var(--node);
     color: #fff;
 }
+/*Responsive Bars Finish*/
+/*About Me Fins=ishes */
+#Projects {
+    border: none !important;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 120vh;   
+    padding-top: 60px;
+    color: white;
+    background: linear-gradient(180deg, var(--background1) 10%, var(--background2));
+
+}
+.calc{ 
+    height: 15rem
+}
+.calcIMG{
+    height: 100%;
+}
 /*Footer Styles and everything inside*/
 
 footer {
@@ -351,3 +367,4 @@ footer {
     margin: 1rem;
     padding: 1rem;
 }
+/*Footer Finish*/ 
