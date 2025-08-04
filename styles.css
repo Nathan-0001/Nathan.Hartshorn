@@ -23,6 +23,11 @@ html {
     font-size: clamp(12px, 2vw, 18px);
     overflow-x: hidden;
 }
+html, body{
+    width: 100vw;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
 /* Media Queries for Responsive Design */
 @media (max-width: 350px) {
     .sidebar { font-size: 0.8rem; }
@@ -50,6 +55,12 @@ html {
     }
     
 }  
+
+@media(max-width: 600px){
+    .calcExplain{
+        font-size: 0.4rem;
+    }
+}
 /*Medium Devices*/
 @media(max-width: 700px){
     html{
@@ -70,11 +81,22 @@ html {
         margin: 12px 4px 0 4px;
     }
     .together{
-        font-size: 90%;
-        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 1rem;
     }
-    .calcIMG{
-        width: 100%;
+    .calcIMG,
+    .calcExplain {
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    .calcExplain{
+        font-size: 0.2em;
+    }
+    .calc {
+        width: 100vw;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
@@ -106,6 +128,17 @@ html {
 @media (min-width: 1200px) {
     .languages { width: 1400px;}
     .lang { min-width: 90px; max-width: 160px; }
+    .together{
+        font-size: 200%;
+        width: 100%;
+    }
+    .calcIMG{
+        width: 100%;
+        height: 100%;
+    }
+    .together{
+        gap: 0.3em;
+    }
 }
 
 
@@ -359,10 +392,10 @@ img, .langIMG{
 }
 .calc{ 
     height: 13rem;
-    width: 75%;
+    width: 100%;
     z-index: 10;
     margin-top: 70px;
-    margin-left: 10%;
+    margin-left: 0;
     text-align: center;
 }
 .calc h3{
@@ -374,32 +407,47 @@ img, .langIMG{
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 20%;
-    padding: 50px;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
 }
-.calcIMG{
-    height: 100%;
+
+.calcIMG,
+.calcExplain {
     width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    min-width: 180px;
+    min-height: 180px;
+    margin: 0 auto;
+    box-sizing: border-box;
     border-radius: 60px;
-    
 }
 .calcExplain{
     padding: 20px;
-    font-size: 60%;
-    width: 30em;
-    height: 35em;
-    margin-left: auto;
+    font-size: 0.7rem;
     border: 2px solid var(--react);
-    border-radius: 60px;
     place-content: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+    -webkit-hyphens: auto;
+    overflow-y: auto;
+    hyphens: auto;
+    font-size: clamp(0.6rem, 2vw, 1rem);
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;   /* IE and Edge */
+}
+.calcExplain::-webkit-scrollbar {
+    width: 0px;                 /* Chrome, Safari, Opera */
+    background: transparent;    /* Optional: just to be safe */
 }
 /*Footer Styles and everything inside*/
 
 footer {
     height: 200px;
     text-align: center;
-    background: lightgrey
+    background: rgb(137, 102, 102)
 }
 
 #Contact {
