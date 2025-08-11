@@ -161,9 +161,6 @@ nav {
 nav.hideNavbar {
     display: none;
 }
-nav.onscroll{
-    display: flex;
-}
 nav ul{
     width: 100%;
     list-style: none;
@@ -372,23 +369,18 @@ img, .langIMG{
     color: #fff;
 }
 /*Responsive Bars Finish*/
-/*About Me Fins=ishes */
+/*About Me Finishes */
 #Projects {
     border: none !important;
-    margin-bottom: 0;
     width: 100%;
     height: 70em;   
     padding-top: 40px;
     color: white;
     background: linear-gradient(180deg, var(--background1) 10%, var(--background2));
-    display: flex;
+    margin-bottom: 200px;
 }
-
-#Projects h1 {
-    position: absolute;
+#Projects h1{
     text-align: center;
-    width: 100%;
-    height: 15%;
 }
 .calc{ 
     height: 13rem;
@@ -398,49 +390,63 @@ img, .langIMG{
     margin-left: 0;
     text-align: center;
 }
-.calc h3{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
 .together{
-    height: 100%;
+    height: 11.5em;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 10px;
     align-items: center;
+    margin-top: 30px;
+    aspect-ratio: 1 / 1;
 }
-
-.calcIMG,
-.calcExplain {
+.projIMG:hover {
+    scale: 1.01;
+}
+.projIMG,
+.explain {
+    height: 100%;
     width: 100%;
     max-width: 400px;
-    aspect-ratio: 1 / 1;
     min-width: 180px;
     min-height: 180px;
+    max-height: 412px;
     margin: 0 auto;
     box-sizing: border-box;
     border-radius: 60px;
 }
-.calcExplain{
+
+.explain{
     padding: 20px;
-    font-size: 0.7rem;
-    border: 2px solid var(--react);
-    place-content: center;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    text-align: center;
-    -webkit-hyphens: auto;
-    overflow-y: auto;
-    hyphens: auto;
-    font-size: clamp(0.6rem, 2vw, 1rem);
-    scrollbar-width: none;      /* Firefox */
-    -ms-overflow-style: none;   /* IE and Edge */
+    font-size: 47%;
+    border: 3px solid var(--react);
+    border-radius: 2%;
 }
-.calcExplain::-webkit-scrollbar {
-    width: 0px;                 /* Chrome, Safari, Opera */
-    background: transparent;    /* Optional: just to be safe */
+.projIMG img{
+    border-radius: 2%;
+}
+.together p{
+    overflow-y: auto;
+    cursor: default;
+    scroll-behavior: smooth;
+}
+.together p::-webkit-scrollbar {
+    width: 10px;
+    ;
+} 
+.together p::-webkit-scrollbar-track {
+    background: transparent;
+}
+.together p::-webkit-scrollbar-thumb {
+    background: var(--react);
+    z-index: -10;
+}
+.project1{
+    height: 50%;
+}
+.project2{
+    height: 50%;
+    text-align: center;
 }
 /*Footer Styles and everything inside*/
 
@@ -458,8 +464,12 @@ footer {
     width: 65px;
     margin: 20px 20px 0 20px;
 }
+
 .name {
-    font-family:x;
+    font-family: 'Train One';
+}
+.stack{
+    font-family: 'Roboto Mono';
 }
 .about-me{
     font-size: 1.2rem;
