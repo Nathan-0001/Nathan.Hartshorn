@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Train+One&family=Londrina+Shadow&display=swap');
+
+:root {
+  --color-bg: #0a0a0a;
+  --color-text: #ffffff;
+  --color-accent: #61dafb;
+  --color-primary: #928faa;
+  --font-mono: 'Roboto Mono', monospace;
+  --font-display: 'Train One', cursive;
+  --font-shadow: 'Londrina Shadow', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: clamp(14px, 2vw, 18px);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-mono);
+  background: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
