@@ -123,17 +123,9 @@
   border-radius: 8px;
 }
 
-.sidebar button:hover {
-  background: rgba(0, 0, 0, 0.1);
-  transform: translateX(10px);
-}
-
-@media (max-width: 768px) {
-  .navbar__links {
-    display: none;
+  .sidebar button:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: translateX(10px);
   }
 
-  .navbar__menu-btn {
-    display: block;
-  }
-}
+/* Mobile styles handled in App.css */

@@ -46,3 +46,152 @@ main {
   text-decoration: underline;
   text-underline-offset: 8px;
 }
+
+/* ========= RESPONSIVE STYLES ========= */
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .about__container,
+  .projects__container {
+    max-width: 1400px;
+  }
+}
+
+/* Tablet (769px - 1024px) */
+@media (max-width: 1024px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Landscape & Small Tablet (601px - 768px) */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  
+  .projects__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .project-card__title {
+    font-size: 1.5rem;
+  }
+  
+  .project-card__desc {
+    font-size: 0.85rem;
+  }
+  
+  .about {
+    padding: 4rem 1rem;
+  }
+  
+  .about__text {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+}
+
+/* Mobile Portrait (600px and below) */
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .hero {
+    height: 100vh;
+    height: 100dvh;
+  }
+  
+  .hero__name {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+  }
+  
+  .hero__title {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+  }
+  
+  .hero__main-title {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+  
+  .hero__main-desc {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    padding: 0 1rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .keyboard-key {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .keyboard-key__name {
+    font-size: 0.75rem;
+  }
+  
+  .navbar__links {
+    display: none;
+  }
+  
+  .navbar__menu-btn {
+    display: block;
+  }
+  
+  footer {
+    padding: 2rem 1rem;
+  }
+  
+  .socials {
+    width: 40px;
+    margin: 10px 10px 0 10px;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+  
+  .hero__content {
+    padding: 1rem;
+  }
+  
+  .about__container {
+    padding: 0 0.5rem;
+  }
+  
+  .contact {
+    padding: 4rem 1rem;
+  }
+  
+  .contact__form {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Navbar responsive styles */
+@media (min-width: 601px) {
+  .navbar__menu-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    height: 6vh;
+    min-height: 50px;
+  }
+  
+  .navbar__brand {
+    font-size: 4vh;
+    line-height: 6vh;
+    height: 6vh;
+  }
+}

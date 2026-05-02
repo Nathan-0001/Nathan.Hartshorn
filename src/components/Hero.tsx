@@ -1,8 +1,10 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './Hero.css'
 
 const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [showIntro, setShowIntro] = useState(true)
+  const [showMain, setShowMain] = useState(false)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -64,9 +66,15 @@ const Hero = () => {
     }
     animate()
 
+    // Animation sequence
+    const timer1 = setTimeout(() => setShowIntro(false), 2500)
+    const timer2 = setTimeout(() => setShowMain(true), 3500)
+
     return () => {
       cancelAnimationFrame(animationId)
       window.removeEventListener('resize', resize)
+      clearTimeout(timer1)
+      clearTimeout(timer2)
     }
   }, [])
 
@@ -74,8 +82,18 @@ const Hero = () => {
     <header id="home" className="hero">
       <canvas ref={canvasRef} className="hero__canvas" />
       <div className="hero__content">
-        <h1 className="hero__name">Nathan Hartshorn</h1>
-        <h2 className="hero__title">Fullstack Developer</h2>
+        {showIntro && (
+          <div className="hero__intro">
+            <h1 className="hero__name animate-slide">Nathan Hartshorn</h1>
+            <h2 className="hero__title animate-slide-delay">Fullstack Developer</h2>
+          </div>
+        )}
+        {showMain && (
+          <div className="hero__main animate-fade-in">
+            <h2 className="hero__main-title">Fullstack Developer</h2>
+            <p className="hero__main-desc">I am a Fullstack Developer with a passion for creating dynamic and responsive web applications. I have experience in HTML, CSS, JavaScript, and React, and I am always eager to learn new technologies and improve my skills.</p>
+          </div>
+        )}
       </div>
     </header>
   )
