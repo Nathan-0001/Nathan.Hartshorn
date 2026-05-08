@@ -46,7 +46,7 @@ const About = () => {
                   borderBottomColor: skill.color,
                   '--key-shadow': skill.color,
                   animationDelay: `${i * 0.1}s`
-                }}
+                } as React.CSSProperties}
               >
                 <span className="keyboard-key__name">{skill.name}</span>
               </div>
