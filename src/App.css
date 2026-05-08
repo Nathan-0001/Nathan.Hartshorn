@@ -1,13 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Train+One&family=Londrina+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&family=Londrina+Shadow&display=swap');
 
 :root {
-  --color-bg: #0a0a0a;
+  --color-bg: #1a1a1a;
   --color-text: #ffffff;
   --color-accent: #61dafb;
   --color-primary: #928faa;
-  --font-mono: 'Roboto Mono', monospace;
-  --font-display: 'Train One', cursive;
-  --font-shadow: 'Londrina Shadow', cursive;
+  --font-main: 'Ubuntu', sans-serif;
 }
 
 * {
@@ -22,8 +20,8 @@ html {
 }
 
 body {
-  font-family: var(--font-mono);
-  background: var(--color-bg);
+  font-family: var(--font-main);
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 30%, #222222 55%, #111111 80%, #050505 100%);
   color: var(--color-text);
   overflow-x: hidden;
 }
@@ -38,13 +36,11 @@ main {
 }
 
 .section-title {
-  font-family: var(--font-display);
+  font-family: var(--font-main);
   font-size: clamp(2rem, 5vw, 3.5rem);
   text-align: center;
   margin-bottom: 2rem;
   color: var(--color-accent);
-  text-decoration: underline;
-  text-underline-offset: 8px;
 }
 
 /* ========= RESPONSIVE STYLES ========= */
@@ -83,13 +79,34 @@ main {
     font-size: 0.85rem;
   }
   
+  .project-card__content {
+    padding: 1.5rem;
+  }
+  
   .about {
-    padding: 4rem 1rem;
+    padding: 4rem 1rem 0;
   }
   
   .about__text {
     font-size: 1rem;
     padding: 0 0.5rem;
+  }
+
+  .hero__intro,
+  .hero__main {
+    top: 40%;
+  }
+  
+  .contact {
+    padding: 4rem 1.5rem;
+  }
+
+  .contact__links {
+    gap: 2rem;
+  }
+
+  .sidebar {
+    width: 280px;
   }
 }
 
@@ -104,37 +121,37 @@ main {
     height: 100dvh;
   }
   
+  .hero__intro,
+  .hero__main {
+    top: 38%;
+  }
+  
   .hero__name {
     font-size: clamp(2rem, 6vw, 3.5rem);
   }
   
-  .hero__title {
-    font-size: clamp(1rem, 3vw, 1.5rem);
-  }
-  
-  .hero__main-title {
+  .hero__main-x {
     font-size: clamp(1.5rem, 5vw, 2.5rem);
   }
   
-  .hero__main-desc {
+  .hero__main-xx {
     font-size: clamp(0.8rem, 2vw, 1rem);
     padding: 0 1rem;
   }
   
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  
   .keyboard-key {
-    width: 80px;
-    height: 80px;
+    width: 65px;
+    height: 65px;
   }
   
   .keyboard-key__name {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
   
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
   .navbar__links {
     display: none;
   }
@@ -143,13 +160,16 @@ main {
     display: block;
   }
   
-  footer {
-    padding: 2rem 1rem;
+  .footer {
+    padding: 1.5rem 1rem;
   }
   
-  .socials {
-    width: 40px;
-    margin: 10px 10px 0 10px;
+  .contact__links {
+    gap: 1.5rem;
+  }
+
+  .contact__link {
+    padding: 0.75rem;
   }
 }
 
@@ -159,20 +179,45 @@ main {
     font-size: 13px;
   }
   
-  .hero__content {
+  .hero__intro,
+  .hero__main {
+    top: 35%;
+  }
+
+  .hero__intro,
+  .hero__main {
     padding: 1rem;
   }
   
+  .about {
+    padding: 3rem 1rem 0;
+  }
+
   .about__container {
     padding: 0 0.5rem;
   }
   
   .contact {
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
   }
-  
-  .contact__form {
-    padding: 0 0.5rem;
+
+  .projects {
+    padding: 30px 1rem 4rem;
+  }
+
+  .project-card__content {
+    padding: 1rem;
+  }
+}
+
+/* Small Mobile (400px and below) */
+@media (max-width: 400px) {
+  .keyboard-key {
+    width: 55px;
+    height: 55px;
+  }
+  .keyboard-key__name {
+    font-size: 0.6rem;
   }
 }
 

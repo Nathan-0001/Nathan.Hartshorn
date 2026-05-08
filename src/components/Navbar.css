@@ -20,7 +20,7 @@
 }
 
 .navbar__brand {
-  font-family: var(--font-shadow);
+  font-family: 'Londrina Shadow', cursive;
   font-size: 2.5rem;
   color: white;
   cursor: pointer;
@@ -36,7 +36,7 @@
   background: none;
   border: none;
   color: white;
-  font-family: var(--font-mono);
+  font-family: var(--font-main);
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;

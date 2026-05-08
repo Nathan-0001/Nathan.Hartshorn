@@ -3,8 +3,7 @@ import './Hero.css'
 
 const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const [showIntro, setShowIntro] = useState(true)
-  const [showMain, setShowMain] = useState(false)
+  const [phase, setPhase] = useState<'intro' | 'transition' | 'main'>('intro')
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -66,9 +65,8 @@ const Hero = () => {
     }
     animate()
 
-    // Animation sequence
-    const timer1 = setTimeout(() => setShowIntro(false), 2500)
-    const timer2 = setTimeout(() => setShowMain(true), 3500)
+    const timer1 = setTimeout(() => setPhase('transition'), 5000)
+    const timer2 = setTimeout(() => setPhase('main'), 6500)
 
     return () => {
       cancelAnimationFrame(animationId)
@@ -82,18 +80,14 @@ const Hero = () => {
     <header id="home" className="hero">
       <canvas ref={canvasRef} className="hero__canvas" />
       <div className="hero__content">
-        {showIntro && (
-          <div className="hero__intro">
-            <h1 className="hero__name animate-slide">Nathan Hartshorn</h1>
-            <h2 className="hero__title animate-slide-delay">Fullstack Developer</h2>
-          </div>
-        )}
-        {showMain && (
-          <div className="hero__main animate-fade-in">
-            <h2 className="hero__main-title">Fullstack Developer</h2>
-            <p className="hero__main-desc">I am a Fullstack Developer with a passion for creating dynamic and responsive web applications. I have experience in HTML, CSS, JavaScript, and React, and I am always eager to learn new technologies and improve my skills.</p>
-          </div>
-        )}
+        <div className={`hero__intro ${phase !== 'intro' ? 'hero__intro--exit' : ''} ${phase === 'main' ? 'hero__intro--hidden' : ''}`}>
+          <h1 className="hero__name">Nathan Hartshorn</h1>
+          <h1 className="hero__title">Full-Stack Developer</h1>
+        </div>
+        <div className={`hero__main ${phase !== 'intro' ? 'hero__main--enter' : ''}`}>
+          <h3 className="hero__main-x">About me</h3>
+          <p className="hero__main-xx">My name is Nathan and I'm a full-stack developer. I have a passion for creating beautiful and functional web applications.</p>
+        </div>
       </div>
     </header>
   )
