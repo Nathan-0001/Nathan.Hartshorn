@@ -49,7 +49,7 @@ const Navbar = ({ scrolled, lightMode, onToggleLight }: { scrolled: boolean; lig
       <div className={`sidebar-overlay ${sidebarOpen ? 'sidebar-overlay--active' : ''}`} onClick={() => setSidebarOpen(false)} />
       <aside className={`sidebar ${sidebarOpen ? 'sidebar--open' : ''}`}>
         <button className="sidebar__close" onClick={() => setSidebarOpen(false)} aria-label="Close menu">
-          <svg width="26" height="26" viewBox="0 -960 960 960" fill={lightMode ? '#fff' : '#333'}>
+          <svg width="26" height="26" viewBox="0 -960 960 960" fill={lightMode ? '#333' : '#fff'}>
             <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
           </svg>
         </button>

@@ -88,4 +88,92 @@
   .hero__content {
     padding: 8rem 1.5rem 4rem;
   }
+
+  .hero__text {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero__photo {
+    width: 150px;
+    height: 220px;
+  }
+
+  .hero__name {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+
+  .hero__title {
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+  }
+
+  .hero__description {
+    font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+  }
+
+  .hero__content {
+    padding: 7rem 1.5rem 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__photo {
+    width: 120px;
+    height: 175px;
+  }
+
+  .hero__name {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+
+  .hero__main {
+    gap: 2rem;
+  }
+
+  .hero__content {
+    padding: 6rem 1rem 3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero__photo {
+    width: 100px;
+    height: 145px;
+  }
+
+  .hero__name {
+    font-size: 1.4rem;
+  }
+
+  .hero__description {
+    font-size: 0.8rem;
+  }
+
+  .hero__main {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero__photo {
+    width: 85px;
+    height: 125px;
+  }
+
+  .hero__name {
+    font-size: 1.2rem;
+  }
+
+  .hero__title {
+    font-size: 0.85rem;
+  }
+
+  .hero__description {
+    font-size: 0.75rem;
+  }
+
+  .hero__content {
+    padding: 5rem 0.75rem 2rem;
+  }
 }

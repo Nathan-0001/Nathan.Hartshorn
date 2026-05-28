@@ -127,7 +127,7 @@
   right: 0;
   width: 280px;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.95);
   z-index: 1002;
   padding: 2rem;
   transform: translateX(100%);
@@ -138,7 +138,7 @@
 }
 
 .light-mode .sidebar {
-  background: rgba(0, 0, 0, 0.95);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .sidebar--open {
@@ -155,20 +155,20 @@
 
 .sidebar__title {
   font-size: 1.3rem;
-  color: #333;
+  color: #fff;
   text-align: center;
   margin-bottom: 1rem;
   font-weight: bold;
 }
 
 .light-mode .sidebar__title {
-  color: #fff;
+  color: #333;
 }
 
 .sidebar button {
   background: none;
   border: none;
-  color: #333;
+  color: #fff;
   font-size: 1.1rem;
   padding: 0.8rem 1rem;
   cursor: pointer;
@@ -179,22 +179,26 @@
 }
 
 .light-mode .sidebar button {
-  color: #fff;
+  color: #333;
 }
 
 .sidebar button:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   transform: translateX(8px);
+}
+
+.light-mode .sidebar button:hover {
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .sidebar hr {
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin: 0.5rem 0;
 }
 
 .light-mode .sidebar hr {
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .sidebar__theme {

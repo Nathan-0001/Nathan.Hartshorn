@@ -79,13 +79,6 @@ main {
   }
 }
 
-/* Tablet (769px - 1024px) */
-@media (max-width: 1024px) {
-  .projects__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 /* Mobile Landscape & Small Tablet (601px - 768px) */
 @media (max-width: 768px) {
   .section-title {
@@ -118,29 +111,6 @@ main {
     padding: 0 0.5rem;
   }
 
-  .hero__intro,
-  .hero__main {
-    top: 46%;
-  }
-
-  .hero__main {
-    flex-direction: column;
-    text-align: center;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .hero__main-text {
-    text-align: center;
-    max-width: 100%;
-  }
-
-  .hero__photo {
-    width: 160px;
-    height: 160px;
-  }
-  
   .contact {
     padding: 4rem 1.5rem;
   }
@@ -160,38 +130,6 @@ main {
     font-size: 14px;
   }
   
-  .hero {
-    height: 100vh;
-    height: 100dvh;
-  }
-  
-  .hero__intro {
-    top: 44%;
-  }
-
-  .hero__main {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .hero__name {
-    font-size: clamp(2rem, 6vw, 3.5rem);
-  }
-  
-  .hero__main-x {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-  }
-  
-  .hero__main-xx {
-    font-size: clamp(0.8rem, 2vw, 1rem);
-  }
-
-  .hero__photo {
-    width: 130px;
-    height: 130px;
-  }
-  
   .keyboard-key {
     width: 65px;
     height: 65px;
@@ -199,18 +137,6 @@ main {
   
   .keyboard-key__name {
     font-size: 0.7rem;
-  }
-  
-  .navbar {
-    padding: 0.5rem 1rem;
-  }
-
-  .navbar__links {
-    display: none;
-  }
-  
-  .navbar__menu-btn {
-    display: block;
   }
   
   .footer {
@@ -230,21 +156,6 @@ main {
 @media (max-width: 480px) {
   html {
     font-size: 13px;
-  }
-  
-  .hero__intro {
-    top: 42%;
-  }
-
-  .hero__main {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .hero__intro,
-  .hero__main {
-    padding: 1rem;
   }
   
   .about {
@@ -278,11 +189,6 @@ main {
     font-size: 0.6rem;
   }
 
-  .hero__photo {
-    width: 110px;
-    height: 110px;
-  }
-
   .projects__grid {
     gap: 1.5rem;
   }
@@ -303,15 +209,6 @@ main {
     font-size: 12px;
   }
 
-  .hero__main-text {
-    font-size: 0.8rem;
-  }
-
-  .hero__photo {
-    width: 90px;
-    height: 90px;
-  }
-
   .section-title {
     font-size: 1.3rem;
   }
@@ -328,31 +225,4 @@ main {
     gap: 1rem;
   }
 
-  .navbar {
-    padding: 0.3rem 0.8rem;
-  }
-
-  .navbar__brand {
-    font-size: 3vh;
-  }
-}
-
-/* Navbar responsive styles */
-@media (min-width: 601px) {
-  .navbar__menu-btn {
-    display: none;
-  }
-}
-
-@media (max-width: 700px) {
-  .navbar {
-    height: 6vh;
-    min-height: 50px;
-  }
-  
-  .navbar__brand {
-    font-size: 4vh;
-    line-height: 6vh;
-    height: 6vh;
-  }
 }
