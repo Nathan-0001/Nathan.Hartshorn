@@ -23,7 +23,9 @@ const About = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting),
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true)
+      },
       { threshold: 0.3 }
     )
     if (ref.current) observer.observe(ref.current)

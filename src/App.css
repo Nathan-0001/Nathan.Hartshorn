@@ -1,11 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&family=Londrina+Shadow&display=swap');
 
 :root {
-  --color-bg: #1a1a1a;
+  --color-bg: #000;
   --color-text: #ffffff;
   --color-accent: #61dafb;
-  --color-primary: #928faa;
   --font-main: 'Ubuntu', sans-serif;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --key-bg: linear-gradient(180deg, #4a4a4a 0%, #2a2a2a 40%, #1a1a1a 100%);
+  --key-text: rgba(255, 255, 255, 0.95);
+  --key-border: #555;
+  --hero-text: rgba(255, 255, 255, 0.9);
+  --hero-text-muted: rgba(255, 255, 255, 0.7);
+}
+
+.light-mode {
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-accent: #065f7a;
+  --card-bg: rgba(0, 0, 0, 0.03);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --key-bg: linear-gradient(180deg, #949494 0%, #eaeaea 40%, #ffffff 100%);
+  --key-text: #000;
+  --key-border: #aaa;
+  --hero-text: #000;
+  --hero-text-muted: rgba(0, 0, 0, 0.6);
 }
 
 * {
@@ -21,18 +40,25 @@ html {
 
 body {
   font-family: var(--font-main);
-  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 30%, #222222 55%, #111111 80%, #050505 100%);
+  background: var(--color-bg);
   color: var(--color-text);
   overflow-x: hidden;
 }
 
-.app {
-  min-height: 100vh;
+.bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
 main {
   position: relative;
   z-index: 1;
+}
+
+.app {
+  min-height: 100vh;
 }
 
 .section-title {
@@ -94,7 +120,25 @@ main {
 
   .hero__intro,
   .hero__main {
-    top: 40%;
+    top: 46%;
+  }
+
+  .hero__main {
+    flex-direction: column;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .hero__main-text {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero__photo {
+    width: 160px;
+    height: 160px;
   }
   
   .contact {
@@ -121,9 +165,14 @@ main {
     height: 100dvh;
   }
   
-  .hero__intro,
+  .hero__intro {
+    top: 44%;
+  }
+
   .hero__main {
-    top: 38%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
   
   .hero__name {
@@ -136,7 +185,11 @@ main {
   
   .hero__main-xx {
     font-size: clamp(0.8rem, 2vw, 1rem);
-    padding: 0 1rem;
+  }
+
+  .hero__photo {
+    width: 130px;
+    height: 130px;
   }
   
   .keyboard-key {
@@ -179,9 +232,14 @@ main {
     font-size: 13px;
   }
   
-  .hero__intro,
+  .hero__intro {
+    top: 42%;
+  }
+
   .hero__main {
-    top: 35%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .hero__intro,
@@ -218,6 +276,64 @@ main {
   }
   .keyboard-key__name {
     font-size: 0.6rem;
+  }
+
+  .hero__photo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .projects__grid {
+    gap: 1.5rem;
+  }
+
+  .project-card__content {
+    padding: 0.75rem;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
+}
+
+/* Very Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  html {
+    font-size: 12px;
+  }
+
+  .hero__main-text {
+    font-size: 0.8rem;
+  }
+
+  .hero__photo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .project-card__title {
+    font-size: 1.2rem;
+  }
+
+  .project-card__desc {
+    font-size: 0.8rem;
+  }
+
+  .contact__links {
+    gap: 1rem;
+  }
+
+  .navbar {
+    padding: 0.3rem 0.8rem;
+  }
+
+  .navbar__brand {
+    font-size: 3vh;
   }
 }
 

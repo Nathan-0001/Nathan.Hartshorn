@@ -20,7 +20,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  color: white;
+  color: var(--color-text);
   text-decoration: none;
   transition: all 0.3s ease;
   padding: 1rem;
@@ -31,6 +31,10 @@
   color: var(--color-accent);
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.05);
+}
+
+.light-mode .contact__link:hover {
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .contact__link span {
