@@ -48,10 +48,16 @@ function App() {
       vx: number
       vy: number
       size: number
+      private cvs: HTMLCanvasElement
+      private c: CanvasRenderingContext2D
+      private isLight: boolean
 
-      constructor() {
-        this.x = Math.random() * canvas.width
-        this.y = Math.random() * canvas.height
+      constructor(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D, lightMode: boolean) {
+        this.cvs = canvas
+        this.c = ctx
+        this.isLight = lightMode
+        this.x = Math.random() * this.cvs.width
+        this.y = Math.random() * this.cvs.height
         this.vx = (Math.random() - 0.5) * 0.25
         this.vy = (Math.random() - 0.5) * 0.25
         this.size = Math.random() * 3 + 1
@@ -60,20 +66,20 @@ function App() {
       update() {
         this.x += this.vx
         this.y += this.vy
-        if (this.x < 0 || this.x > canvas.width) this.vx *= -1
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1
+        if (this.x < 0 || this.x > this.cvs.width) this.vx *= -1
+        if (this.y < 0 || this.y > this.cvs.height) this.vy *= -1
       }
 
       draw() {
-        ctx.beginPath()
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
-        ctx.fillStyle = lightMode ? '#000000' : '#ffffff'
-        ctx.globalAlpha = 0.5
-        ctx.fill()
+        this.c.beginPath()
+        this.c.arc(this.x, this.y, this.size, 0, Math.PI * 2)
+        this.c.fillStyle = this.isLight ? '#000000' : '#ffffff'
+        this.c.globalAlpha = 0.5
+        this.c.fill()
       }
     }
 
-    for (let i = 0; i < 100; i++) particles.push(new Particle())
+    for (let i = 0; i < 100; i++) particles.push(new Particle(canvas, ctx, lightMode))
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
