@@ -1,6 +1,7 @@
 .projects {
   padding: 6rem 2rem 6rem;
   min-height: 100vh;
+  scroll-margin-top: 60px;
 }
 
 .projects__container {

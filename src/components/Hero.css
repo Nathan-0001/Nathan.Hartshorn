@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  scroll-margin-top: 60px;
 }
 
 .hero__content {

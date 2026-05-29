@@ -76,7 +76,7 @@ const Navbar = ({ scrolled, lightMode, onToggleLight }: { scrolled: boolean; lig
         </div>
         <p className="sidebar__title">Where to?</p>
         <button onClick={() => scrollTo('home')}>Home</button>
-        <button onClick={() => scrollTo('about')}>About me</button>
+        <button onClick={() => scrollTo('about')}>About</button>
         <button onClick={() => scrollTo('projects')}>Projects</button>
         <button onClick={() => scrollTo('contact')}>Contact</button>
       </aside>
