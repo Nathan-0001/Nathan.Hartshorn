@@ -3,28 +3,28 @@ import './Projects.css'
 const projects = [
   {
     title: 'Car Dealership Review Portal',
-    description: 'A comprehensive review platform for car dealerships. Allows users to rate and review dealerships, view ratings, and make informed decisions when purchasing vehicles.',
+    description: 'A full-stack review platform featuring user authentication, CRUD reviews with star ratings, search and filter by dealership location/name, and an admin dashboard for managing listings. Built with a REST API backend and a responsive React frontend.',
     image: '',
     link: '#',
     tech: ['React', 'Node.js', 'MongoDB']
   },
   {
     title: 'E-Commerce Website',
-    description: 'A modern e-commerce platform built with responsive design and modern CSS techniques. Features product listings, shopping cart functionality, and a clean user interface.',
+    description: 'A responsive e-commerce store built with pure HTML and CSS, featuring product catalog with categories, a persistent shopping cart, and a clean mobile-first layout using CSS Grid and Flexbox. No frameworks — just modern vanilla CSS.',
     image: '',
     link: 'https://verdant-vibes.netlify.app',
     tech: ['HTML', 'CSS', 'Responsive Design']
   },
   {
     title: 'Calculator',
-    description: 'Built following a Udemy course, then refactored with custom styling and improved UX. Uses buttons instead of inputs for better interaction.',
+    description: 'A keyboard-friendly calculator with operator chaining, decimal support, and responsive button layout. Refactored from a course project with custom styling, CSS transitions, and full keyboard input support for a native-feeling UX.',
     image: '',
     link: 'https://calcifynh.netlify.app/',
     tech: ['HTML', 'CSS', 'JavaScript']
   },
   {
     title: 'Personal Budget Tracker',
-    description: 'An intuitive budget tracking application that helps users manage their finances. Features expense categorization, spending insights, and monthly budget planning.',
+    description: 'A single-page budget tracker with add/edit/delete expenses, category breakdowns, and interactive Chart.js visualizations. All data persists in localStorage — no backend needed. Features monthly budgeting with spending limits and progress tracking.',
     image: '',
     link: '#',
     tech: ['React', 'Chart.js', 'LocalStorage']
