@@ -27,8 +27,8 @@
 
 .project-card:hover {
   transform: translateY(-10px);
-  border-color: var(--color-accent);
-  box-shadow: 0 10px 40px rgba(97, 218, 251, 0.2);
+  border-color: var(--color-text);
+  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1);
 }
 
 .project-card__image {
@@ -53,7 +53,7 @@
 .project-card__title {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: var(--color-accent);
+  color: var(--color-text);
 }
 
 .project-card__desc {
@@ -73,18 +73,18 @@
 }
 
 .tech-tag {
-  background: rgba(97, 218, 251, 0.2);
-  color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
   font-size: 0.85rem;
-  border: 1px solid rgba(97, 218, 251, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   font-family: 'Montserrat', sans-serif;
 }
 
 .project-card__link {
   display: inline-block;
-  color: var(--color-accent);
+  color: var(--color-text);
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease;

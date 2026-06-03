@@ -1,17 +1,21 @@
 import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
+import Header from './components/Header'
 import About from './components/About'
 import './App.css'
 
 const Projects = lazy(() => import('./components/Projects'))
+const GitHubSection = lazy(() => import('./components/GitHub'))
+const Certifications = lazy(() => import('./components/Certifications'))
 const Contact = lazy(() => import('./components/Contact'))
 const Footer = lazy(() => import('./components/Footer'))
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
   const [lightMode, setLightMode] = useState(false)
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [activeSection, setActiveSection] = useState('home')
+  const [language, setLanguage] = useState('en')
+  const canvasRef = useRef(null)
 
   useEffect(() => {
     document.body.classList.toggle('light-mode', lightMode)
@@ -20,9 +24,50 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
+      const sections = ['home', 'about', 'projects', 'contact']
+      let current = 'home'
+      for (const id of sections) {
+        const el = document.getElementById(id)
+        if (el) {
+          const rect = el.getBoundingClientRect()
+          if (rect.top <= window.innerHeight * 0.75) {
+            current = id
+          }
+        }
+      }
+      setActiveSection(current)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('section-fade--visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    )
+
+    const observe = () => {
+      document.querySelectorAll('.section-fade:not(.section-fade--visible)').forEach(el => observer.observe(el))
+    }
+
+    observe()
+
+    const mutationObserver = new MutationObserver(observe)
+    const main = document.querySelector('main')
+    if (main) mutationObserver.observe(main, { childList: true, subtree: true })
+
+    return () => {
+      observer.disconnect()
+      mutationObserver.disconnect()
+    }
   }, [])
 
   useEffect(() => {
@@ -32,8 +77,8 @@ function App() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    let animationId: number
-    const particles: Particle[] = []
+    let animationId
+    const particles = []
 
     const resize = () => {
       canvas.width = window.innerWidth
@@ -43,16 +88,7 @@ function App() {
     window.addEventListener('resize', resize)
 
     class Particle {
-      x: number
-      y: number
-      vx: number
-      vy: number
-      size: number
-      private cvs: HTMLCanvasElement
-      private c: CanvasRenderingContext2D
-      private isLight: boolean
-
-      constructor(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D, lightMode: boolean) {
+      constructor(canvas, ctx, lightMode) {
         this.cvs = canvas
         this.c = ctx
         this.isLight = lightMode
@@ -98,17 +134,26 @@ function App() {
   return (
     <div className={`app ${lightMode ? 'light-mode' : ''}`}>
       <canvas ref={canvasRef} className="bg-canvas" />
-      <Navbar scrolled={scrolled} lightMode={lightMode} onToggleLight={() => setLightMode(!lightMode)} />
+      <Navbar
+        scrolled={scrolled}
+        lightMode={lightMode}
+        onToggleLight={() => setLightMode(!lightMode)}
+        activeSection={activeSection}
+        language={language}
+        onToggleLang={() => setLanguage(prev => prev === 'en' ? 'es' : 'en')}
+      />
       <main>
-        <Hero />
-        <About />
+        <Header language={language} />
+        <About language={language} />
         <Suspense fallback={null}>
-          <Projects />
-          <Contact />
+          <Projects language={language} />
+          <GitHubSection />
+          <Certifications language={language} />
+          <Contact language={language} />
         </Suspense>
       </main>
       <Suspense fallback={null}>
-        <Footer />
+        <Footer language={language} />
       </Suspense>
     </div>
   )

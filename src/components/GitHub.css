@@ -1,0 +1,45 @@
+.github {
+  padding: 6rem 2rem;
+  scroll-margin-top: 60px;
+}
+
+.github__container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.github__chart {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.light-mode .github__chart {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.github__img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  filter: none;
+}
+
+.light-mode .github__img {
+  filter: brightness(0.85) saturate(0.8);
+}
+
+.github__desc {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  opacity: 0.5;
+  margin-top: 1rem;
+}

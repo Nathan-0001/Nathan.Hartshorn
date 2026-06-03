@@ -1,11 +1,17 @@
 .contact {
-  padding: 6rem 2rem;
+  min-height: 50vh;
   scroll-margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 4rem;
 }
 
 .contact__container {
   max-width: 800px;
   margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
 }
 
 .contact__links {
@@ -29,7 +35,6 @@
 }
 
 .contact__link:hover {
-  color: var(--color-accent);
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.05);
 }

@@ -1,12 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
+import translations from '../translations'
 import './About.css'
 
-interface Skill {
-  name: string
-  color: string
-}
-
-const skills: Skill[] = [
+const skills = [
   { name: 'HTML5', color: '#E44D26' },
   { name: 'CSS3', color: '#1572B6' },
   { name: 'JavaScript', color: '#F7DF1E' },
@@ -17,9 +13,10 @@ const skills: Skill[] = [
   { name: 'AI', color: '#FF6B6B' },
 ]
 
-const About = () => {
+const About = ({ language }) => {
   const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef(null)
+  const t = translations[language].about
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,10 +30,10 @@ const About = () => {
   }, [])
 
   return (
-    <section id="about" className="about" ref={ref}>
+    <section id="about" className="about section-fade" ref={ref}>
       <div className="about__container">
-        <h2 className="section-title">My Stack</h2>
-        <p className="about__text">Technologies and tools I work with.</p>
+        <h2 className="section-title">{t.title}</h2>
+        <p className="about__text">{t.desc}</p>
         <div className={`skills-grid ${isVisible ? 'visible' : ''}`}>
           {skills.map((skill, i) => {
             const floatDown = [1, 3, 5, 7].includes(i)
@@ -48,7 +45,7 @@ const About = () => {
                   borderBottomColor: skill.color,
                   '--key-shadow': skill.color,
                   animationDelay: `${i * 0.1}s`
-                } as React.CSSProperties}
+                }}
               >
                 <span className="keyboard-key__name">{skill.name}</span>
               </div>

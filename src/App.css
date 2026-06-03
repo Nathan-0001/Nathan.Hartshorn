@@ -3,7 +3,6 @@
 :root {
   --color-bg: #000;
   --color-text: #ffffff;
-  --color-accent: #61dafb;
   --font-main: 'Ubuntu', sans-serif;
   --card-bg: rgba(255, 255, 255, 0.05);
   --card-border: rgba(255, 255, 255, 0.1);
@@ -17,7 +16,6 @@
 .light-mode {
   --color-bg: #ffffff;
   --color-text: #000000;
-  --color-accent: #065f7a;
   --card-bg: rgba(0, 0, 0, 0.03);
   --card-border: rgba(0, 0, 0, 0.1);
   --key-bg: linear-gradient(180deg, #949494 0%, #eaeaea 40%, #ffffff 100%);
@@ -66,7 +64,20 @@ main {
   font-size: clamp(2rem, 5vw, 3.5rem);
   text-align: center;
   margin-bottom: 2rem;
-  color: var(--color-accent);
+  color: var(--color-text);
+}
+
+/* ========= FADE IN ON SCROLL ========= */
+
+.section-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section-fade--visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ========= RESPONSIVE STYLES ========= */
