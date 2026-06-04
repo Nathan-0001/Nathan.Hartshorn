@@ -74,6 +74,10 @@
 }
 
 @media (max-width: 480px) {
+  .header {
+    align-items: flex-start;
+    padding-top: 30vh;
+  }
   .header__content {
     align-items: center;
     margin-left: 0;
