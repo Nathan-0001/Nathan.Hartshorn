@@ -12,7 +12,7 @@ const translations = {
       available: 'Available for work',
       greeting: "Hi there! I'm Nathan",
       role: 'Full Stack Developer',
-      typing: ['AI Powered Developer', 'End - to - End Thinker', 'Building With Intelligence', 'Code, Deploy, Repeat', 'Curious by Default', 'Lifelong Learner'],
+      typing: ['AI Powered Developer', 'End-to-End Thinker', 'Building With Intelligence', 'Code, Deploy, Repeat', 'Curious by Default', 'Lifelong Learner'],
       desc: "Passionate about constructing solutions that make a real difference in the real world. From integrating smart features, designing APIs, to shipping production ready apps. I build with reliability, scalability and with the end user always in mind.",
       projectsBtn: 'Projects',
       contactBtn: 'Contact',
