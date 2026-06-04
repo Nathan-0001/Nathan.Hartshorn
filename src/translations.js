@@ -12,8 +12,10 @@ const translations = {
       available: 'Available for work',
       greeting: "Hi there! I'm Nathan",
       role: 'Full Stack Developer',
-      typing: ['AI Integrator', 'Tech Enthusiast', 'Lifelong Learner'],
-      desc: "Passionate about crafting full stack solutions that make a real difference, from intuitive front-end experiences to the backend logic and infrastructure that power them. Whether it's integrating smart features, designing APIs, or shipping production-ready apps, I build with reliability, scalability, and the end user always in mind.",
+      typing: ['AI Powered Developer', 'End - to - End Thinker', 'Building With Intelligence', 'Code, Deploy, Repeat', 'Curious by Default', 'Lifelong Learner'],
+      desc: "Passionate about constructing solutions that make a real difference in the real world. From integrating smart features, designing APIs, to shipping production ready apps. I build with reliability, scalability and with the end user always in mind.",
+      projectsBtn: 'Projects',
+      contactBtn: 'Contact',
     },
     about: {
       title: 'My Stack',
@@ -65,7 +67,9 @@ const translations = {
       greeting: 'Hola, soy Nathan',
       role: 'Full Stack Developer',
       typing: ['Integrador IA', 'Entusiasta Tecnológico', 'Aprendiz Perpetuo'],
-      desc: 'Apasionado por crear soluciones full stack que marcan una diferencia real, desde experiencias front-end intuitivas hasta la lógica de backend y la infraestructura que las impulsa. Ya sea integrando funciones inteligentes, diseñando APIs o lanzando aplicaciones listas para producción, construyo con fiabilidad, escalabilidad y el usuario final siempre presente.',
+      desc: 'Apasionado por construir soluciones que marcan una diferencia real en el mundo real. Desde integrar funciones inteligentes, diseñar APIs, hasta lanzar aplicaciones listas para producción. Construyo con fiabilidad, escalabilidad y el usuario final siempre presente.',
+      projectsBtn: 'Proyectos',
+      contactBtn: 'Contacto',
     },
     about: {
       title: 'Mi Stack',
