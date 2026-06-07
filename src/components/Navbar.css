@@ -475,6 +475,8 @@
     transform: translateX(36px);
   }
 
+  }
+
 @media (min-width: 701px) {
   .navbar__menu-btn {
     display: none;
