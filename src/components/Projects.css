@@ -31,6 +31,16 @@
   box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1);
 }
 
+.project-card--in-progress {
+  opacity: 0.5;
+}
+
+.project-card--in-progress:hover {
+  transform: none;
+  border-color: var(--card-border);
+  box-shadow: none;
+}
+
 .project-card__image {
   display: none;
 }
@@ -93,4 +103,18 @@
 
 .project-card__link:hover {
   transform: translateX(10px);
+}
+
+.project-card__in-progress {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+  opacity: 0.4;
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  cursor: default;
 }

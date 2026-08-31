@@ -2,10 +2,17 @@ import translations from '../translations'
 import './Projects.css'
 
 const techItems = [
-  ['React', 'Node.js', 'MongoDB'],
+  ['HTML', 'CSS', 'JavaScript', 'SEO'],
   ['HTML', 'CSS', 'Responsive Design'],
   ['HTML', 'CSS', 'JavaScript'],
-  ['React', 'Chart.js', 'LocalStorage'],
+  ['React', 'Node.js', 'MongoDB'],
+]
+
+const urls = [
+  'https://www.keystone-archaeology.com',
+  'https://verdant-vibes.netlify.app',
+  'https://calcifynh.netlify.app/',
+  '#',
 ]
 
 const Projects = ({ language }) => {
@@ -17,7 +24,7 @@ const Projects = ({ language }) => {
         <h2 className="section-title">{t.title}</h2>
         <div className="projects__grid">
           {t.items.map((project, index) => (
-            <div key={index} className="project-card">
+            <div key={index} className={`project-card ${project.inProgress ? 'project-card--in-progress' : ''}`}>
               <div className="project-card__content">
                 <h3 className="project-card__title">{project.title}</h3>
                 <p className="project-card__desc">{project.desc}</p>
@@ -26,14 +33,18 @@ const Projects = ({ language }) => {
                     <span key={tech} className="tech-tag">{tech}</span>
                   ))}
                 </div>
-                <a
-                  href={['#', 'https://verdant-vibes.netlify.app', 'https://calcifynh.netlify.app/', '#'][index]}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-card__link"
-                >
-                  {t.view}
-                </a>
+                {project.inProgress ? (
+                  <span className="project-card__in-progress">{t.inProgress}</span>
+                ) : (
+                  <a
+                    href={urls[index]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-card__link"
+                  >
+                    {t.view}
+                  </a>
+                )}
               </div>
             </div>
           ))}

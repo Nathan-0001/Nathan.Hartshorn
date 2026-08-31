@@ -24,10 +24,11 @@ const translations = {
     projects: {
       title: 'Projects',
       view: 'View Project →',
+      inProgress: 'In Progress',
       items: [
         {
-          title: 'Car Dealership Review Portal',
-          desc: 'A full-stack review platform featuring user authentication, CRUD reviews with star ratings, search and filter by dealership location/name, and an admin dashboard for managing listings.',
+          title: 'Keystone Archaeology',
+          desc: 'A professional business website for an archaeological services company, featuring an image carousel, responsive mobile-first layout, and SEO structured data with JSON-LD.',
         },
         {
           title: 'E-Commerce Website',
@@ -38,8 +39,9 @@ const translations = {
           desc: 'A keyboard-friendly calculator with operator chaining, decimal support, and responsive button layout, built with custom styling and CSS transitions.',
         },
         {
-          title: 'Personal Budget Tracker',
-          desc: 'A single-page budget tracker with add/edit/delete expenses, category breakdowns, interactive Chart.js visualizations, and localStorage persistence.',
+          title: 'Car Dealership Review Portal',
+          desc: 'A full-stack review platform featuring user authentication, CRUD reviews with star ratings, search and filter by dealership location/name, and an admin dashboard for managing listings.',
+          inProgress: true,
         },
       ],
     },
@@ -78,10 +80,11 @@ const translations = {
     projects: {
       title: 'Proyectos',
       view: 'Ver Proyecto →',
+      inProgress: 'En progreso',
       items: [
         {
-          title: 'Portal de Reseñas de Concesionarios',
-          desc: 'Plataforma de reseñas full-stack con autenticación de usuarios, reseñas CRUD con valoración por estrellas, búsqueda y filtro por ubicación o nombre del concesionario, y un panel de administración.',
+          title: 'Keystone Archaeology',
+          desc: 'Un sitio web profesional para una empresa de servicios arqueológicos, con carrusel de imágenes, diseño responsive mobile-first y datos estructurados SEO con JSON-LD.',
         },
         {
           title: 'Tienda de Comercio Electrónico',
@@ -92,8 +95,9 @@ const translations = {
           desc: 'Calculadora compatible con teclado que incluye encadenamiento de operadores, soporte decimal y diseño de botones responsive, con estilos personalizados y transiciones CSS.',
         },
         {
-          title: 'Gestor de Presupuesto Personal',
-          desc: 'Gestor de presupuesto de una sola página con gastos añadir/editar/eliminar, desglose por categorías, visualizaciones interactivas con Chart.js y persistencia en localStorage.',
+          title: 'Portal de Reseñas de Concesionarios',
+          desc: 'Plataforma de reseñas full-stack con autenticación de usuarios, reseñas CRUD con valoración por estrellas, búsqueda y filtro por ubicación o nombre del concesionario, y un panel de administración.',
+          inProgress: true,
         },
       ],
     },
