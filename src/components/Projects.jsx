@@ -2,7 +2,7 @@ import translations from '../translations'
 import './Projects.css'
 
 const techItems = [
-  ['HTML', 'CSS', 'JavaScript', 'SEO'],
+  ['React', 'Vite', 'CSS', 'SEO'],
   ['HTML', 'CSS', 'Responsive Design'],
   ['HTML', 'CSS', 'JavaScript'],
   ['React', 'Node.js', 'MongoDB'],
